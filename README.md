@@ -3,6 +3,8 @@
 [![Code Climate](https://codeclimate.com/github/watu/table_builder.png)](https://codeclimate.com/github/watu/table_builder)
 [![Gem Version](https://badge.fury.io/rb/watu_table_builder.png)](http://badge.fury.io/rb/watu_table_builder)
 
+MY FORK OF WATU TABLE BUILDER with few changes
+
 About watu_table_builder
 ========================
 
