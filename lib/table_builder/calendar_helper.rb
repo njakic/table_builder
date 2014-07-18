@@ -47,8 +47,7 @@ module CalendarHelper
             yield(day, nil)
             concat("</td>")
           end
-          concat(tag(:td, td_options(day, id_pattern), true))
-          concat(tag(:td, td_options(day, class_pattern), true))
+          concat(tag(:td, td_options(day, id_pattern , class_pattern), true))
           yield(day, objects)
           concat('</td>')
           concat('</tr>') if(day.wday ==  @calendar.last_weekday)
@@ -62,13 +61,14 @@ module CalendarHelper
       @calendar.objects_for_days(@objects)
     end
 
-    def td_options(day, id_pattern)
+    def td_options(day, id_pattern, class_pattern)
       options = {}
       css_classes = []
       css_classes << 'today'    if day.strftime("%Y-%m-%d") ==  @today.strftime("%Y-%m-%d")
       css_classes << 'notmonth' if day.month != @calendar.month
       css_classes << 'weekend'  if day.wday == 0 or day.wday == 6
       css_classes << 'future'   if day > @today.to_date
+      css_classes << class_pattern if class_pattern
       options[:class] = css_classes.join(' ') unless css_classes.empty?
       options[:id]    = day.strftime(id_pattern) if id_pattern
       options
