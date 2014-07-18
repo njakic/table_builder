@@ -1,0 +1,9 @@
+.DS_Store
+pkg
+.idea
+*.gem
+.bundle
+Gemfile.lock
+pkg/*
+.yardoc
+doc
